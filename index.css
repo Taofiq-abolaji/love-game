@@ -31,8 +31,9 @@ body {
     text-align: center;
 }
 
-.hidden { display: none; }
-
+.hidden {
+    display: none !important;
+}
 h2 { color: #ff4d6d; }
 p { font-size: 16px; }
 
@@ -90,4 +91,45 @@ button {
 @keyframes fade {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+
+#finalSurprise {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.popper {
+    font-size: 60px;
+    animation: pop 1s ease infinite alternate;
+}
+
+@keyframes pop {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+.fade-out {
+    animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+
+#confettiCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* so buttons/messages still clickable */
 }
